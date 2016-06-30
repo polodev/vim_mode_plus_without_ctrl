@@ -10,36 +10,23 @@
 # -------------------------
 'atom-text-editor.vim-mode-plus':
   'escape': 'vim-mode-plus:reset-normal-mode'
-  'ctrl-c': 'vim-mode-plus:reset-normal-mode'
-  'ctrl-[': 'vim-mode-plus:reset-normal-mode'
 
 # all except normal
 # -------------------------
 'atom-text-editor.vim-mode-plus:not(.normal-mode)':
   'escape': 'vim-mode-plus:activate-normal-mode'
-  'ctrl-[': 'vim-mode-plus:activate-normal-mode'
 
 # all except normal
 # -------------------------
-'.platform-darwin atom-text-editor.vim-mode-plus:not(.normal-mode)':
-  'ctrl-c': 'vim-mode-plus:activate-normal-mode'
 
-# insert
+# insert following line created by me
 # -------------------------
 'atom-text-editor.vim-mode-plus.insert-mode':
-  'ctrl-w': 'editor:delete-to-beginning-of-word'
-  'ctrl-u': 'editor:delete-to-beginning-of-line'
-  'ctrl-y': 'vim-mode-plus:copy-from-line-above'
-  # disabled for compatibility with the common binding for going to the end of the line
-  # 'ctrl-e': 'vim-mode-plus:copy-from-line-below'
-  # 'ctrl-a': 'vim-mode-plus:insert-last-inserted'
-  'ctrl-r': 'vim-mode-plus:insert-register'
-  'ctrl-o': 'vim-mode-plus:activate-normal-mode-once'
+  'j j': 'vim-mode-plus:reset-normal-mode'
 
 # Insert-replace
 # -------------------------
 'atom-text-editor.vim-mode-plus.insert-mode.replace':
-  'ctrl-h': 'vim-mode-plus:replace-mode-backspace'
   'backspace': 'vim-mode-plus:replace-mode-backspace'
 
 # except insert
@@ -79,12 +66,6 @@
   '+': 'vim-mode-plus:move-to-first-character-of-line-down'
   'enter': 'vim-mode-plus:move-to-first-character-of-line-down'
 
-  'ctrl-u': 'vim-mode-plus:scroll-half-screen-up'
-  'ctrl-b': 'vim-mode-plus:scroll-full-screen-up'
-  'ctrl-d': 'vim-mode-plus:scroll-half-screen-down'
-  'ctrl-f': 'vim-mode-plus:scroll-full-screen-down'
-  'ctrl-e': 'vim-mode-plus:scroll-down'
-  'ctrl-y': 'vim-mode-plus:scroll-up'
 
   'z enter': 'vim-mode-plus:scroll-cursor-to-top'
   'z t': 'vim-mode-plus:scroll-cursor-to-top-leave'
@@ -140,46 +121,14 @@
   'g space': 'vim-mode-plus:compact-spaces'
   # 'g _': 'vim-mode-plus:snake-case'
   # 'g r':   'vim-mode-plus:reverse'
-  # 'ctrl-s': 'vim-mode-plus:transform-string-by-select-list'
   # 'g m': 'vim-mode-plus:mark-range'
 
-  'ctrl-a': 'vim-mode-plus:increase'
-  'ctrl-x': 'vim-mode-plus:decrease'
-  'g ctrl-a': 'vim-mode-plus:increment-number' # experimental
-  'g ctrl-x': 'vim-mode-plus:decrement-number' # experimental
 
-  'ctrl-w ctrl-h': 'window:focus-pane-on-left'
-  'ctrl-w h': 'window:focus-pane-on-left'
-  'ctrl-w left': 'window:focus-pane-on-left'
-  'ctrl-w ctrl-l': 'window:focus-pane-on-right'
-  'ctrl-w l': 'window:focus-pane-on-right'
-  'ctrl-w right': 'window:focus-pane-on-right'
-  'ctrl-w ctrl-k': 'window:focus-pane-above'
-  'ctrl-w k': 'window:focus-pane-above'
-  'ctrl-w up': 'window:focus-pane-above'
-  'ctrl-w ctrl-j': 'window:focus-pane-below'
-  'ctrl-w j': 'window:focus-pane-below'
-  'ctrl-w down': 'window:focus-pane-below'
-  'ctrl-w ctrl-w': 'window:focus-next-pane'
-  'ctrl-w w': 'window:focus-next-pane'
-  'ctrl-w ctrl-p': 'window:focus-previous-pane'
-  'ctrl-w p': 'window:focus-previous-pane'
 
   # From v1.6.0
-  'ctrl-w ctrl-v': 'pane:split-right-and-copy-active-item'
-  'ctrl-w v': 'pane:split-right-and-copy-active-item'
-  'ctrl-w ctrl-s': 'pane:split-down-and-copy-active-item'
-  'ctrl-w s': 'pane:split-down-and-copy-active-item'
 
-  'ctrl-w z': 'vim-mode-plus:maximize-pane'
   'cmd-enter': 'vim-mode-plus:maximize-pane'
 
-  'ctrl-w ctrl-c': 'pane:close'
-  'ctrl-w c': 'pane:close'
-  'ctrl-w ctrl-q': 'core:close'
-  'ctrl-w q': 'core:close'
-  'g t': 'pane:show-next-item'
-  'g T': 'pane:show-previous-item'
 
   'f': 'vim-mode-plus:find'
   'F': 'vim-mode-plus:find-backwards'
@@ -213,8 +162,6 @@
   '`': 'vim-mode-plus:start-move-to-mark'
   "'": 'vim-mode-plus:start-move-to-mark-line'
 
-  # 'ctrl-cmd-k': 'vim-mode-plus:move-up-to-edge'
-  # 'ctrl-cmd-j': 'vim-mode-plus:move-down-to-edge'
 
   # '[ [': 'vim-mode-plus:move-to-previous-fold-start'
   # '] [': 'vim-mode-plus:move-to-next-fold-start'
@@ -275,7 +222,6 @@
 
 'atom-text-editor.vim-mode-plus.with-range-marker:not(.insert-mode)':
   'cmd-d': 'vim-mode-plus:select-all-in-range-marker'
-  'ctrl-cmd-g': 'vim-mode-plus:marked-range'
 
 # normal
 # -------------------------
@@ -292,11 +238,9 @@
   'R': 'vim-mode-plus:activate-replace-mode'
   'v': 'vim-mode-plus:activate-characterwise-visual-mode'
   'V': 'vim-mode-plus:activate-linewise-visual-mode'
-  'ctrl-v': 'vim-mode-plus:activate-blockwise-visual-mode'
   'g v': 'vim-mode-plus:select-previous-selection'
   # 'g c':    'vim-mode-plus:select-latest-change'
   'u': 'vim-mode-plus:undo'
-  'ctrl-r': 'vim-mode-plus:redo'
   'O': 'vim-mode-plus:insert-above-with-newline'
   'o': 'vim-mode-plus:insert-below-with-newline'
   'a': 'vim-mode-plus:insert-after'
@@ -305,8 +249,6 @@
   'X': 'vim-mode-plus:delete-left'
   's': 'vim-mode-plus:substitute'
   '.': 'vim-mode-plus:repeat'
-  'ctrl-]': 'symbols-view:go-to-declaration'
-  'ctrl-t': 'symbols-view:return-from-declaration'
   '"': 'vim-mode-plus:set-register-name'
 
   # 'y s': 'vim-mode-plus:surround'
@@ -432,7 +374,6 @@
 
   'v': 'vim-mode-plus:activate-characterwise-visual-mode'
   'V': 'vim-mode-plus:activate-linewise-visual-mode'
-  'ctrl-v': 'vim-mode-plus:activate-blockwise-visual-mode'
 
   # 'g I': 'vim-mode-plus:insert-at-start-of-target'
   # 'I': 'vim-mode-plus:insert-at-start-of-target'
@@ -453,23 +394,15 @@
 
 # Input mini editor e.g. mark, surround.
 # -------------------------
-'atom-text-editor.vim-mode-plus-input':
-  'ctrl-c': 'vim-mode-plus:input-cancel'
-  'ctrl-[': 'vim-mode-plus:input-cancel'
 
 # Search mini editor
 # -------------------------
 'atom-text-editor.vim-mode-plus-search':
-  'ctrl-r ctrl-w': 'vim-mode-plus:search-set-cursor-word'
-  'ctrl-v': 'vim-mode-plus:search-activate-literal-mode'
-  'ctrl-c': 'vim-mode-plus:search-cancel'
-  'ctrl-[': 'vim-mode-plus:search-cancel'
   'shift-tab': 'vim-mode-plus:search-visit-prev'
   'tab': 'vim-mode-plus:search-visit-next'
 
 # If you want to map normal char to special operation.
 # Use `not(.literal-mode)` selector like below.
-# When you hit `ctrl-v`, it activate literal-mode.
 # So you can input `;`, `[`, `]` as literal char, since following keymap is only
 # effective in `literal-mode` selector is set.
 #
